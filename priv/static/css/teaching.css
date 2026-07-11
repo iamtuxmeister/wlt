@@ -1,0 +1,40 @@
+.navbar {
+	padding: 0px 0px;
+}
+
+.breadcrumbs {
+    padding-bottom: 62px;
+}
+
+section a {
+	 color: #e8eaea;
+	 text-decoration: underline;
+}
+
+section a:hover {
+	color: #1f2126;
+}
+
+section {
+	padding-bottom: 20px;
+}
+/*
+     FILE ARCHIVED ON 23:59:08 Nov 29, 2018 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 14:15:40 Apr 07, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 1.034
+  exclusion.robots: 0.089
+  exclusion.robots.policy: 0.07
+  esindex: 0.019
+  cdx.remote: 67.415
+  LoadShardBlock: 985.073 (3)
+  PetaboxLoader3.datanode: 1063.199 (4)
+  PetaboxLoader3.resolve: 101.087 (2)
+  load_resource: 221.04
+*/

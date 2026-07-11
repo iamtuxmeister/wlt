@@ -1,0 +1,36 @@
+                    <div class="centered-pills" id="content">
+                        <ul id="pills" class="nav nav-pills" data-tabs="pills">
+                            <li class="active"><a href="#OT" data-toggle="tab">Old Testament</a></li>
+                            <li><a href="#NT" data-toggle="tab">New Testament</a></li>
+                        </ul>
+                        <div id="my-tab-content" class="tab-content">
+                            <div class="tab-pane active" id="OT">
+                                <br>
+                                <div class="row" align="left">
+                                    {% for book in ot_books %}
+                                    <div class="col-xs-6 col-md-3">
+                                        <a href="/teachings/book/{{ book.id }}"
+                                           hx-get="/teachings/book/{{ book.id }}"
+                                           hx-target="#teachings-panel"
+                                           hx-swap="innerHTML"
+                                           hx-push-url="true">{{ book.name }}</a>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="NT">
+                                <br>
+                                <div class="row" align="left">
+                                    {% for book in nt_books %}
+                                    <div class="col-xs-6 col-md-3">
+                                        <a href="/teachings/book/{{ book.id }}"
+                                           hx-get="/teachings/book/{{ book.id }}"
+                                           hx-target="#teachings-panel"
+                                           hx-swap="innerHTML"
+                                           hx-push-url="true">{{ book.name }}</a>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>

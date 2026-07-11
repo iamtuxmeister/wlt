@@ -1,0 +1,7 @@
+-name wlt@127.0.0.1
+-setcookie wlt_cookie
++P 1048576
+-smp enable
++A 16
++zdbbl 32768
+-env ERL_CRASH_DUMP /tmp/wlt_erl_crash.dump

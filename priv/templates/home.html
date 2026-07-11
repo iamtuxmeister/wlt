@@ -1,0 +1,21 @@
+{% extends "layouts/base.html" %}
+{% block content %}
+{% include "partials/intro.html" %}
+
+    <!-- Services Section -->
+    <section id="teachings" class="teachings-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="teachings-panel">
+                        {% include "partials/teachings_ot_nt.html" %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% include "partials/about.html" %}
+{% include "partials/give.html" %}
+{% include "partials/contact.html" %}
+{% endblock %}

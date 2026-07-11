@@ -1,0 +1,6 @@
+_build/
+priv/db/*.db
+priv/static/audio/
+erl_crash.dump
+*.beam
+.rebar3/

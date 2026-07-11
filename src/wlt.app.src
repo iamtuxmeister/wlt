@@ -1,0 +1,20 @@
+{application, wlt, [
+    {description, "wlt Erlang/Cowboy web application"},
+    {vsn, "0.1.0"},
+    {registered, []},
+    {mod, {wlt_app, []}},
+    {applications, [
+        kernel,
+        stdlib,
+        crypto,
+        asn1,
+        public_key,
+        ssl,
+        inets,
+        cowboy,
+        esqlite,
+        jsone
+    ]},
+    {env, []},
+    {modules, []}
+]}.

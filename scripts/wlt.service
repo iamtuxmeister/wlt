@@ -1,0 +1,21 @@
+[Unit]
+Description=wlt Erlang web service
+After=network.target
+
+[Service]
+Type=simple
+User=www-data
+WorkingDirectory=/path/to/wlt
+ExecStart=/path/to/wlt/_build/default/rel/wlt/bin/wlt foreground
+ExecStop=/path/to/wlt/_build/default/rel/wlt/bin/wlt stop
+Restart=on-failure
+RestartSec=5s
+LimitNOFILE=65536
+Environment=HOME=/var/lib/wlt
+Environment=ERL_CRASH_DUMP=/var/log/wlt/erl_crash.dump
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=wlt
+
+[Install]
+WantedBy=multi-user.target

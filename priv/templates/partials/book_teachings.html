@@ -1,0 +1,23 @@
+<link href="/static/css/teaching.css" rel="stylesheet">
+
+<section>
+    <div class="container">
+        <div class="row breadcrumbs" align="left">
+            <div class="col-md-12">
+                <a href="/" hx-get="/" hx-target="#teachings-panel" hx-swap="innerHTML" hx-push-url="true">Books</a>&nbsp;&nbsp;-&gt;&nbsp;&nbsp;{{ book.name }}
+            </div>
+        </div>
+
+        <div class="row" align="left">
+            {% for teaching in teachings %}
+            <div class="col-xs-6 col-md-3">
+                <a href="/teachings/teaching/{{ teaching.id }}"
+                   hx-get="/teachings/teaching/{{ teaching.id }}"
+                   hx-target="#teachings-panel"
+                   hx-swap="innerHTML"
+                   hx-push-url="true">{{ teaching.title }}</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,412 @@
+/*!
+ * Start Bootstrap - Scrolling Nav (http://startbootstrap.com/)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+
+.intro-section, .about-section, .give-section, .contact-section {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+@media(min-width:767px) {
+  .navbar {
+      padding: 20px 0;
+      border-bottom: 0px;
+      -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+      -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
+      transition: background .5s ease-in-out,padding .5s ease-in-out;
+  }
+
+  .top-nav-collapse {
+      padding: 0;
+
+  }
+
+  .form-styler {
+    text-align: right;
+  }
+
+  .offset-for-image {
+    padding-top: 55px;
+    padding-bottom: 10px;
+  }
+
+  .intro-section, .about-section, .shop-section, .give-section, .radio-section, .contact-section {
+    padding-top: 200px;
+  }
+
+h1 {
+    font-size: 3em; /* 40px/16=2.5em */
+}
+
+h2 {
+    font-size: 2.125em; /* 30px/16=1.875em */
+}
+
+h3 {
+    font-size: 1.875em; /* 30px/16=1.875em */
+}
+
+h4 {
+    font-size: 1.25em;
+}
+
+h5 {
+    font-size: .9em;
+}
+
+h6 {
+    font-size: .875em;
+}
+
+body, p {
+    font-size: 18px; /* 14px/16=0.875em */
+}
+
+
+.centering-pad-left {
+  width: 125px;
+}
+
+.centering-pad-right {
+  width: 100px;
+}
+
+}
+
+@media(min-width:1200px) {
+
+.navbar-default .navbar-nav > li > a {
+  font-size: 25px;
+}
+
+}
+
+@media(max-width: 766px) {
+  .intro-section, .about-section, .shop-section, .give-section, .radio-section {
+    padding-top: 65px;
+  }
+  .form-styler {
+    text-align: left;
+  }
+}
+
+.primary-color {
+    background: #596364;
+}
+
+.secondary-color {
+    background: #595b56;
+}
+
+.ternary-color {
+    background: #1f2126;
+}
+
+.white-color {
+    background: #e8eaea;
+}
+
+.intro-section {
+    color: #e8eaea;
+    text-align: center;
+    background: #596364;
+}
+
+.teachings-section {
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding-top: 200px;
+    color: #e8eaea;
+    padding-bottom: 100px;
+    text-align: center;
+    background: #595b56;
+}
+
+.teachings-section a {
+    color: #e8eaea;
+    text-decoration: underline;
+}
+
+.teachings-section a:hover {
+    color: #1f2126;
+}
+
+.about-section {
+    color: #e8eaea;
+    padding-bottom: 100px;
+    text-align: center;
+    background: #1f2126;
+    line-height: 1.5;
+}
+
+.shop-section {
+    color: #e8eaea;
+    padding-bottom: 100px;
+    text-align: center;
+    background: #596364;
+}
+
+.shop-section a {
+    color: #e8eaea;
+    text-decoration: underline;
+}
+
+.shop-section a:hover {
+    color: #1f2126;
+}
+
+.give-section {
+    color: #e8eaea;
+    padding-bottom: 100px;
+    text-align: center;
+    background: #595b56;
+}
+
+.radio-section {
+    color: #e8eaea;
+    padding-bottom: 100px;
+    text-align: center;
+    background: #1f2126;
+}
+
+.radio-section a {
+    color: #e8eaea;
+    text-decoration: underline;
+}
+
+.radio-section a:hover {
+    color: #596364;
+}
+
+.contact-section {
+    padding-top: 200px;
+    padding-bottom: 100px;
+    color:  #1f2126;
+    text-align: center;
+    background: #e8eaea;
+}
+
+.embed-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.embed-container iframe, .embed-container object, .embed-container embed { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+.radio-program-list {
+  padding-right:10px;
+  text-align:left;
+}
+
+.navbar-default {
+  background-color: #596364;
+  border-color: #1f2126;
+}
+.navbar-default .navbar-brand {
+  color: #e8eaea;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-text {
+  color: #e8eaea;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #e8eaea;
+  letter-spacing: 2px;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #1f2126;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu {
+  background-color: #596364;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a {
+  color: #e8eaea;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover,
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
+  color: #ecf0f1;
+  background-color: #1f2126;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > .divider {
+  background-color: #1f2126;
+}
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+  color: #1f2126;
+  background-color: #1f2126;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #ecf0f1;
+  background-color: #1f2126;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #ecf0f1;
+  background-color: #1f2126;
+}
+.navbar-default .navbar-toggle {
+  border-color: #1f2126;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #1f2126;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #e8eaea;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #e8eaea;
+}
+.navbar-default .navbar-link {
+  color: #e8eaea;
+}
+.navbar-default .navbar-link:hover {
+  color: #ecf0f1;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #e8eaea;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #1f2126;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ecf0f1;
+    background-color: #1f2126;
+  }
+}
+
+.navbar-collapse {
+  text-align:center;
+  }
+.navbar-nav {
+    display:inline-block;
+    float:none;
+  }
+
+/* Tabbed Navigation Section */
+
+.centered-pills { text-align:center; }
+.centered-pills ul.nav-pills { display:inline-block; }
+.centered-pills li { display:inline; }
+.centered-pills a { float:left; }
+* html .centered-pills ul.nav-pills { display:inline; } /* IE6 */
+*+html .centered-pills ul.nav-pills { display:inline; } /* IE7 */
+
+
+.nav-pills > li > a {
+    color: #ecf0f1;
+}
+.nav-pills > li > a:hover {
+    color: #1f2126;
+    background-color: #e8eaea;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:focus {
+    color: #ecf0f1;
+    background-color: #1f2126;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    text-decoration: none;
+}
+
+.nav-pills > li.active > a:hover {
+    background-color: #ecf0f1;
+    color: #1f2126;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    text-decoration: none;
+}
+
+.brand {
+    position: absolute;
+    top: 0;
+    text-align: center;
+    left: 50%; 
+    margin-left: -100px;
+    padding:0;
+}
+
+.center-navbar {
+  color: #596364;
+  width: 240px;
+}
+
+/* .nav li {
+float:left;
+width: 136px;
+}
+.nav li a:link {
+display: block;
+width: 100%;
+}*/
+
+.product-image {
+        padding: 10px;
+}
+
+/*
+     FILE ARCHIVED ON 18:36:22 May 21, 2017 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 14:15:37 Apr 07, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 0.538
+  exclusion.robots: 0.045
+  exclusion.robots.policy: 0.036
+  esindex: 0.009
+  cdx.remote: 3255.215
+  LoadShardBlock: 119.634 (3)
+  PetaboxLoader3.datanode: 121.648 (4)
+  load_resource: 186.834
+  PetaboxLoader3.resolve: 85.274
+*/

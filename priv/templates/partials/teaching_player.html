@@ -1,0 +1,24 @@
+<link href="/static/css/teaching.css" rel="stylesheet">
+
+<div class="container">
+<div class="row breadcrumbs" align="left">
+	<div class="col-md-12">
+		<a href="/" hx-get="/" hx-target="#teachings-panel" hx-swap="innerHTML" hx-push-url="true">Books</a>&nbsp;&nbsp;-&gt;&nbsp;&nbsp;<a href="/teachings/book/{{ book.id }}" hx-get="/teachings/book/{{ book.id }}" hx-target="#teachings-panel" hx-swap="innerHTML" hx-push-url="true">{{ book.name }}</a>&nbsp;&nbsp;-&gt;&nbsp;&nbsp;{{ teaching.title }}
+	</div>
+</div>
+<div class="row">
+<div class="col-md-6">
+    <div id="content" align="left">
+        <h3>Listen, Download, and Share</h3>
+
+        <audio class="player" preload="metadata" style="width: 300px;" controls autobuffer>
+        <source src="{{ teaching.audio_url }}" type="audio/mpeg">
+        </audio>
+        <table><tr width="100%"><td><a href="{{ teaching.audio_url }}" download="{{ teaching.title }}.mp3"><strong>Download {{ teaching.title }}</strong></a></td></tr></table>
+    </div>
+    <p>
+        Verse by verse study through {{ teaching.title }} with Pastor Matt Fox of Bandon Christian Fellowship.
+    </p>
+</div>
+</div>
+</div>
