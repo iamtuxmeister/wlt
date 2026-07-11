@@ -1,0 +1,49 @@
+[
+    {wlt, [
+        {http, [{port, 8000}]},
+
+        {db_backend, sqlite},
+
+        {sqlite, [
+            {path, "${WLT_DB_PATH}"}
+        ]},
+
+        %% PostgreSQL — uncomment + set db_backend = postgres to activate
+        %% {postgres, [
+        %%     {host,      "localhost"},
+        %%     {port,      5432},
+        %%     {database,  "wlt"},
+        %%     {user,      "wlt"},
+        %%     {password,  "secret"},
+        %%     {pool_size, 5}
+        %% ]},
+
+        {session_secret, <<"CHANGE_ME_32_BYTES_OF_RANDOM_KEY">>},
+
+        %% reCAPTCHA v3 — register a site at https://www.google.com/recaptcha/admin
+        {recaptcha, [
+            {site_key,   <<"6LeDYU0tAAAAAC20Y9Bvh6Rc-UXxsWja_PZYxy2N">>},
+            {secret_key, <<"6LeDYU0tAAAAANX7ueHAmF4KptPH2O8bf-BrNVSV">>},
+            {min_score,  0.5}
+        ]},
+
+        %% Contact form delivery — relayed via the local MTA's `sendmail`
+        {contact, [
+            {sendmail_path, "/usr/sbin/sendmail"},
+            {to_email,      <<"example@example.com">>},
+            {from_email,    <<"Website Contact Form <noreply@waylifetruth.org>">>}
+        ]}
+    ]},
+
+    {kernel, [
+        {logger_level, info},
+        %% Caps any single log message (e.g. a verbose ssl connection crash
+        %% report that embeds the full CA bundle) so a transient TLS hiccup
+        %% can't flood the console with tens of thousands of lines.
+        {logger, [
+            {handler, default, logger_std_h, #{
+                formatter => {logger_formatter, #{chars_limit => 4000}}
+            }}
+        ]}
+    ]}
+].

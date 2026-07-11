@@ -13,6 +13,8 @@ RestartSec=5s
 LimitNOFILE=65536
 Environment=HOME=/var/lib/wlt
 Environment=ERL_CRASH_DUMP=/var/log/wlt/erl_crash.dump
+Environment=RELX_REPLACE_OS_VARS=true
+Environment=WLT_DB_PATH=/var/lib/wlt/wlt.db
 StandardOutput=journal
 StandardError=journal
 SyslogIdentifier=wlt

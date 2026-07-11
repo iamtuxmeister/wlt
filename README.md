@@ -43,9 +43,17 @@ Migrations run automatically at startup. Add new ones in `src/wlt_db.erl`:
 
 ## Deploy
 
+The SQLite DB path is injected at boot from `$WLT_DB_PATH` (see
+`config/sys.config.src` + `scripts/wlt.service`), so it lives outside the
+release tree and survives `rebar3 release` rebuilds/redeploys.
+
 ```bash
+sudo mkdir -p /var/lib/wlt
+sudo chown www-data:www-data /var/lib/wlt
+
 rebar3 release
 sudo cp scripts/wlt.service /etc/systemd/system/
+# edit /path/to/wlt in the unit file to the real deploy path
 sudo systemctl enable --now wlt
 ```
 # wlt

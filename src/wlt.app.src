@@ -13,7 +13,8 @@
         inets,
         cowboy,
         esqlite,
-        jsone
+        jsone,
+        erlydtl
     ]},
     {env, []},
     {modules, []}
