@@ -68,6 +68,10 @@
         document.getElementById('contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
             var form = this;
+            if (form.dataset.submitting) return;
+            form.dataset.submitting = "1";
+            var submitBtn = form.querySelector('button[type="submit"]');
+            if (submitBtn) submitBtn.disabled = true;
             grecaptcha.ready(function() {
                 grecaptcha.execute('{{ recaptcha_key }}', {action: 'contact'}).then(function(token) {
                     document.getElementById('recaptcha_token').value = token;
