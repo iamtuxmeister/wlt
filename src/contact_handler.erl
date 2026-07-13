@@ -144,7 +144,9 @@ deliver(SendmailPath, Mail) ->
                     error_logger:error_msg(
                         "[contact] sendmail exited with status ~p~n", [N]),
                     {error, {sendmail_exit, N}}
-            after 10000 ->
+            after 30000 ->
+                error_logger:error_msg(
+                    "[contact] sendmail did not exit within 30s~n", []),
                 {error, sendmail_timeout}
             end
     end.
