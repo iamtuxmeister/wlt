@@ -126,6 +126,13 @@ send_mail(FirstName, LastName, FromEmail, Message) ->
 header_safe(Bin) ->
     re:replace(Bin, "[\r\n]+", " ", [global, {return, binary}]).
 
+%% Handing the message to sendmail is what matters for "sent" -- once it's
+%% queued with the local MTA, delivery is effectively guaranteed and the
+%% sendmail process's own exit can lag well behind that (observed >10s in
+%% production, long enough to collide with nginx's proxy_read_timeout). So
+%% the request handler only waits on the fast, synchronous is_regular check;
+%% the port is opened and waited on in a detached process purely so real
+%% failures still get logged, without making the user wait for them.
 deliver(SendmailPath, Mail) ->
     case filelib:is_regular(SendmailPath) of
         false ->
@@ -133,20 +140,22 @@ deliver(SendmailPath, Mail) ->
                 "[contact] sendmail not found at ~s~n", [SendmailPath]),
             {error, sendmail_not_found};
         true ->
-            Port = open_port({spawn_executable, SendmailPath},
-                              [{args, ["-t", "-i"]}, binary, exit_status,
-                               stderr_to_stdout]),
-            port_command(Port, Mail),
-            Port ! {self(), close},
-            receive
-                {Port, {exit_status, 0}} -> ok;
-                {Port, {exit_status, N}} ->
-                    error_logger:error_msg(
-                        "[contact] sendmail exited with status ~p~n", [N]),
-                    {error, {sendmail_exit, N}}
-            after 30000 ->
-                error_logger:error_msg(
-                    "[contact] sendmail did not exit within 30s~n", []),
-                {error, sendmail_timeout}
-            end
+            spawn(fun() -> deliver_async(SendmailPath, Mail) end),
+            ok
+    end.
+
+deliver_async(SendmailPath, Mail) ->
+    Port = open_port({spawn_executable, SendmailPath},
+                      [{args, ["-t", "-i"]}, binary, exit_status,
+                       stderr_to_stdout]),
+    port_command(Port, Mail),
+    Port ! {self(), close},
+    receive
+        {Port, {exit_status, 0}} -> ok;
+        {Port, {exit_status, N}} ->
+            error_logger:error_msg(
+                "[contact] sendmail exited with status ~p~n", [N])
+    after 30000 ->
+        error_logger:error_msg(
+            "[contact] sendmail did not exit within 30s~n", [])
     end.
